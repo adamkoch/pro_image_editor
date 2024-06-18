@@ -152,8 +152,7 @@ class _CustomAppbarBottombarExampleState
               ),
               bottomBar: (paintEditor, rebuildStream) => ReactiveCustomWidget(
                 stream: rebuildStream,
-                builder: (_) =>
-                    _bottomBarPaintingEditor(paintEditor, constraints),
+                builder: (_) => SizedBox(height: 0),
               ),
             ),
             textEditor: CustomWidgetsTextEditor(
@@ -227,7 +226,9 @@ class _CustomAppbarBottombarExampleState
             Icons.bug_report,
             color: Colors.amber,
           ),
-          onPressed: () {},
+          onPressed: () {
+            editor.openPaintingEditor();
+          },
         ),
         IconButton(
           tooltip: 'Undo',
